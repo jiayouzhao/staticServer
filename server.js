@@ -17,7 +17,7 @@ var server = http.createServer(function(request, response) {
 	console.log("有发送请求，路径（带查询参数）为：" + pathWithQuery);
 	response.statusCode = 200;
 	path = (path === "/") ? "/index.html" : path;
-	let setHead = /(?<=\.)(\w*)/.exec(path)[0];
+	let setHead = /(?<=\.)(\w*$)/.exec(path)[0];
 
 	let hashMap = {
 		html:"text/html",
